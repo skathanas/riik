@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>What Country is it today?</title>
+</head><div id="pea">
+<body>
+    <label for="riik">Vali riik:</label>
+    <form action="/" method="POST" >
+    <select name="riik">
+      <option value="Estonia">Estonia</option>
+      <option value="Latvia">Latvia</option>
+      <option value="Lithuania">Lithuania</option>
+      
+    </select>
+    <input type="submit" value="Submit" ></div>
+</form>
+<% if(countryIndex) { %>
+<h1><%= countryIndex.name %></h1>
+<table>
+  <tr>
+      <th>Top level domain: </th>
+      <td><%= countryIndex.topLevelDomain %></td>
+</tr>
+<tr>
+  <th>Capital: </th>
+  <td><%= countryIndex.capital %></td>
+</tr>
+<tr>
+  <th>Calling codes: </th>
+  <td><%= countryIndex.callingCodes %></td>
+</tr>
+<tr>
+<th>Region: </th>
+<td><%= countryIndex.region %></td>
+</tr>
+<tr>
+  <th>Subregion: </th>
+  <td><%= countryIndex.subregion %></td>
+</tr>
+<tr>
+<th>Population: </th>
+<td><%= countryIndex.population %></td>
+</tr>
+<tr>
+  <th>Timezones: </th>
+  <td><%= countryIndex.timezones %></td>
+</tr>
+<tr>
+<th>Language:  </th>
+<td><%= countryIndex.languages[0].name %></td>
+</tr>
+<tr>
+  <th>Currency: </th>
+  <td><%= countryIndex.currencies[0].code %> <%= countryIndex.currencies[0].name %> <%= countryIndex.currencies[0].symbol%></td>
+</tr>
+<tr>
+<td colspan="2"><img src="<%= countryIndex.flag %>" width="300" ></td>
+</tr>
+
+</table>
+<% } %>
+</body>
+</html>
